@@ -48,9 +48,8 @@
                             <span class="text-muted">Aucune image</span>
                         @endif
                     </td>
-
-                    <td>
-                        <div class="d-flex gap-2">
+                    <td class="text-center">
+                        <div class="d-flex justify-content-center gap-2">
                             <a href="{{ route('pollutions.exportPDF', $pollution->id) }}" class="btn btn-secondary btn-sm">Exporter PDF</a>
                             <!-- <a href="{{ route('pollutions.edit', $pollution->id) }}" class="btn btn-warning btn-sm">Modifier</a> -->
                             <form action="{{ route('pollutions.destroy', $pollution->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette pollution ?');">
@@ -65,12 +64,12 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="6" class="text-center text-muted">Aucune pollution enregistrée.</td>
+                    <td colspan="7" class="text-center text-muted">Aucune pollution enregistrée.</td>
                 </tr>
                 @endforelse
             </tbody>
         </table>
-    </ddi
+    </div>
 </div>
 
 @endsection

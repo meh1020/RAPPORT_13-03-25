@@ -48,13 +48,13 @@
                         <td><small>{{ $vedette->total_morts }}</small></td>
                         <td><small>{{ $vedette->total_disparus }}</small></td>
                         <td>
-                            <div class="d-flex gap-2">
+                            <div class="d-flex justify-content-center">
                                 <form action="{{ route('vedette_sar.destroy', $vedette->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet élément ?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm">
                                         <i class="fas fa-trash-alt"></i>
-                                         Supprimer
+                                        Supprimer
                                     </button>
                                 </form>
                             </div>

@@ -31,12 +31,17 @@
                         <td>{{ $suivi->nom_navire }}</td>
                         <td>{{ $suivi->mmsi }}</td>
                         <td>{{ $suivi->observations }}</td>
-                        <td>
-                            <form action="{{ route('suivi_navire_particuliers.destroy', $suivi->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce suivi ?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">Supprimer</button>
-                            </form>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center">
+                                <form action="{{ route('suivi_navire_particuliers.destroy', $suivi->id) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce suivi ?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                        Supprimer
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @empty
@@ -48,5 +53,4 @@
         </table>
 
     </div>
-
 @endsection

@@ -43,8 +43,8 @@
                         <td><small>{{ $cabotage->navires }}</small></td>
                         <td><small>{{ $cabotage->equipage }}</small></td>
                         <td><small>{{ $cabotage->passagers }}</small></td>
-                        <td>
-                            <div class="d-flex gap-2">
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
                                 <form action="{{ route('cabotage.destroy', $cabotage->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet élément ?');">
                                     @csrf
                                     @method('DELETE')

@@ -1,7 +1,6 @@
-
 @extends('general.top')
 
-@section('title', 'LISTES AVURNAV')
+@section('title', 'SITREP')
 
 @section('content')
 
@@ -53,10 +52,9 @@
                         <td><small>{{ $sitrep->initial_action_taken }}</small></td>
                         <td><small>{{ $sitrep->chronology }}</small></td>
                         <td><small>{{ $sitrep->additional_information }}</small></td>
-                        <td>
-                            <div class="d-flex gap-2">
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
                                 <a href="{{ route('sitreps.exportPDF', $sitrep->id) }}" class="btn btn-secondary btn-sm">Exporter</a>
-                                
                                 <form action="{{ route('sitreps.destroy', $sitrep->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette pollution ?');">
                                     @csrf
                                     @method('DELETE')

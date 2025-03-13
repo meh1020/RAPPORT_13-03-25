@@ -55,8 +55,8 @@
                         <td><small>{{ $avurnav->zone }}</small></td>
                         <td><small>{{ $avurnav->derniere_communication ?? 'Non disponible' }}</small></td>
                         <td><small>{{ $avurnav->contacts }}</small></td>
-                        <td>
-                            <div class="d-flex gap-2">
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center gap-2">
                                 <a href="{{ route('export.pdf', $avurnav->id) }}" class="btn btn-secondary btn-sm">Exporter</a>
                                 <!-- <a href="{{ route('export.pdf', $avurnav->id) }}" class="btn btn-success btn-sm">Voir détail</a> -->
                                 <form action="" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet élément ?');">
@@ -66,7 +66,6 @@
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
-
                             </div>
                         </td>
                     </tr>
@@ -80,7 +79,6 @@
     </div>
 </div>
 <style>
-
     .pagination {
         flex-wrap: wrap; /* Empêche le débordement */
         justify-content: center; /* Centre la pagination */

@@ -94,14 +94,16 @@
                         <td><small>{{ $bilan->disparus }}</small></td>
                         <td><small>{{ $bilan->evasan }}</small></td>
                         <td><small>{{ $bilan->bilan_materiel }}</small></td>
-                        <td>
-                            <form action="{{ route('bilan_sars.destroy', $bilan->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet élément ?');">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </form>
+                        <td class="text-center">
+                            <div class="d-flex justify-content-center">
+                                <form action="{{ route('bilan_sars.destroy', $bilan->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cet élément ?');">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </form>
+                            </div>
                         </td>
                     </tr>
                 @empty
